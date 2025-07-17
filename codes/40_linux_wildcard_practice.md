@@ -135,7 +135,7 @@ mkdir logs temp docs
 
 ### 6-3. `file`로 시작하는 모든 파일의 내용을 `combined.txt`로 합치기
 ```bash
-# 명령어를 작성하세요
+# cat file* > combined.txt
 ```
 
 ---
