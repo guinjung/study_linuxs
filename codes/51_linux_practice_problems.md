@@ -325,8 +325,18 @@ nano에서 작성할 내용 예시: nano check_dir.sh && chmod 700 check_dir.sh
 
 ```
 [guinjung@localhost] ~/quests/shell_practice/new_project $./check_dir.sh
-ls: cannot access './backup/': No such file or directory
-touch: cannot touch './backup/checked.txt': No such file or directory
+backup 디렉토리가 없습니다.
+
+[guinjung@localhost] ~/quests/shell_practice/new_project $cat ./check_dir.sh
+DIR="backup"
+
+if [ -d "$DIR" ]; then
+  echo "$DIR 디렉토리가 존재합니다."
+  touch checked.txt
+else
+  echo "$DIR 디렉토리가 없습니다."
+fi
+
 ```
 
 ---
