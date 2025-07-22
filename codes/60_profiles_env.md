@@ -65,13 +65,17 @@ practice  tempdir  tempdir1
 * 파일에는 임의의 간단한 문자열이 들어갈 것
 
 * **매 로그인마다 자동 생성**
-mkdir -p ~/Downloads/auto_created/logs
+  ---
+  mkdir -p ~/Downloads/auto_created/logs
+
 touch ~/Downloads/auto_created/info.txt
+
 touch ~/Downloads/auto_created/logs/log.txt
+
 echo "test" > ~/Downloads/auto_created/info.txt
+
 echo "test" > ~/Downloads/auto_created/logs/log.txt
 
-  ---
 ```
 [guinjung@localhost Downloads]$ tree
 .
