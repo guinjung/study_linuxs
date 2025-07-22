@@ -97,8 +97,11 @@ echo "test" > ~/Downloads/auto_created/logs/log.txt
 
 * `sudo` 권한 필요
 vi /etc/login_notice.txt
+
 vi /etc/profile
+
 cat /etc/login_notice.txt
+
 ```
 [root@localhost ~]# su - guinjung
 Welcome to My Server!!
