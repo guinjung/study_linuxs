@@ -172,26 +172,35 @@ Enter input file: article.txt
 Unique words saved to: article\_unique.txt
 
 ```
-[guinjung@localhost env]$ ./unique_words.sh
-read input: people.txt
-Unique words saved to people.txt:
-alice
-bob
-charlie
-com
-daum
-diana
-eve
-frank
-gmail
-grace
-hank
-naver
-net
 [guinjung@localhost env]$ cat unique_words.sh
 read -p "read input: " v_filename
-echo "Unique words saved to $v_filename:" && tr -cs '[:alnum:]' '\n' < $v_filename | tr '[:upper:]' '[:lower:]' | sort | uniq
-[guinjung@localhost env]$  
+read -p "Unique words saved to: " v_filename_uw
+echo "Unique words saved to $v_filename:" && tr -cs '[:alnum:]' '\n' < $v_filename | tr '[:upper:]' '[:lower:]' | sort | uniq \
+	> $v_filename_uw
+[guinjung@localhost env]$ 
+[guinjung@localhost env]$ ./unique_words.sh
+read input: article.txt
+Unique words saved to: article_unique.txt     
+Unique words saved to article.txt:
+[guinjung@localhost env]$ cat article_unique.txt
+an
+and
+automation
+developers
+embedded
+for
+is
+linux
+many
+open
+operating
+popular
+programming
+servers
+source
+system
+systems
+use
 ```
 ---
 
