@@ -49,7 +49,6 @@ elif [ $1 = "status" ] && [ -f "$PID_FILE" ] && ps -p $(cat $PID_FILE) ; then
         echo "PID: " && echo $V_PID
 elif [ $1 = "stop" ]; then
         V_PID=$(cat http.pid)
-        echo "$V_PID"
         kill -9 "$V_PID"
         echo "서버를 종료했습니다."
 elif [ $1 = "tail_log" ]; then
