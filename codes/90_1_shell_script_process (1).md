@@ -32,3 +32,51 @@
 * 변수 `PORT`, `PID`, `LOGFILE` 등을 정의해 구성 가능
 
 
+'''
+[guinjung@192.168.0.59 ~/Downloads/webroot]$ cat ./webserver_01.sh
+PID_FILE="http.pid"
+LOG_FILE="server.log"
+CMD="python3 -m http.server $PORT --bind 0.0.0.0"
+
+V_PID=$(cat http.pid)
+echo $V_PID
+
+if [ $1 = "start" ]; then
+        $CMD > "$LOG_FILE" 2>&1 &
+        echo $! > "$PID_FILE"
+        echo "서버가 백그라운드에서 시작되었습니다."
+elif [ $1 = "status" ] && [ -f "$PID_FILE" ] && ps -p $(cat $PID_FILE) ; then
+        echo "서버가 실행중입니다."
+        echo "PID: " && echo $V_PID
+elif [ $1 = "stop" ]; then
+        V_PID=$(cat http.pid)
+        echo "$V_PID"
+        kill -9 "$V_PID"
+        echo "서버를 종료했습니다."
+else
+        echo "실행 중인 http서버가 없습니다."
+fi
+
+[guinjung@192.168.0.59 ~/Downloads/webroot]$ ./webserver_01.sh start
+41923
+서버가 백그라운드에서 시작되었습니다.
+
+
+[guinjung@192.168.0.59 ~/Downloads/webroot]$ ./webserver_01.sh status
+41971
+    PID TTY          TIME CMD
+  41971 pts/3    00:00:00 python3
+서버가 실행중입니다.
+PID:
+41971
+
+[guinjung@192.168.0.59 ~/Downloads/webroot]$ ./webserver_01.sh stop
+41971
+41971
+서버를 종료했습니다.
+
+[guinjung@192.168.0.59 ~/Downloads/webroot]$ ./webserver_01.sh status
+41971
+    PID TTY          TIME CMD
+실행 중인 http서버가 없습니다.
+'''
