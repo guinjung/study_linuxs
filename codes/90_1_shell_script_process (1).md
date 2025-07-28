@@ -39,7 +39,6 @@ LOG_FILE="server.log"
 CMD="python3 -m http.server $PORT --bind 0.0.0.0"
 
 V_PID=$(cat http.pid)
-echo $V_PID
 
 if [ $1 = "start" ]; then
         $CMD > "$LOG_FILE" 2>&1 &
