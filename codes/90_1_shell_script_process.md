@@ -31,9 +31,8 @@
 
 * 변수 `PORT`, `PID`, `LOGFILE` 등을 정의해 구성 가능
 
-~
-~
-'''
+
+```
 [guinjung@192.168.0.59 ~/Downloads/webroot]$ cat ./webserver_01.sh
 PID_FILE="http.pid"
 LOG_FILE="server.log"
@@ -80,4 +79,4 @@ PID:
 41971
     PID TTY          TIME CMD
 실행 중인 http서버가 없습니다.
-'''
+```
