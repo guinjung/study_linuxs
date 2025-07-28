@@ -36,7 +36,7 @@
 [guinjung@192.168.0.59 ~/Downloads/webroot]$ cat ./webserver_01.sh
 PID_FILE="http.pid"
 LOG_FILE="server.log"
-CMD="python3 -m http.server $PORT --bind 0.0.0.0"
+CMD="python3 -m http.server 8000 --bind 0.0.0.0"
 
 V_PID=$(cat http.pid)
 
