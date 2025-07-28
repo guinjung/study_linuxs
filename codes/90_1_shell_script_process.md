@@ -39,7 +39,6 @@ LOG_FILE="server.log"
 CMD="python3 -m http.server $PORT --bind 0.0.0.0"
 
 V_PID=$(cat http.pid)
-echo $V_PID
 
 if [ $1 = "start" ]; then
         $CMD > "$LOG_FILE" 2>&1 &
@@ -53,6 +52,8 @@ elif [ $1 = "stop" ]; then
         echo "$V_PID"
         kill -9 "$V_PID"
         echo "서버를 종료했습니다."
+elif [ $1 = "tail_log" ]; then
+        tail -f $LOG_FILE
 else
         echo "실행 중인 http서버가 없습니다."
 fi
