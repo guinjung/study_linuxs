@@ -31,7 +31,8 @@
 
 * 변수 `PORT`, `PID`, `LOGFILE` 등을 정의해 구성 가능
 
-
+~
+~
 '''
 [guinjung@192.168.0.59 ~/Downloads/webroot]$ cat ./webserver_01.sh
 PID_FILE="http.pid"
